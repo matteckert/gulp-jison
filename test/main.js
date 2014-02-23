@@ -16,19 +16,19 @@ var createVirtualFile = function (filename, contents) {
 }
 
 describe('gulp-jison', function() {
-	it('should output the same parser as jison', function (done) {
-		var filepath = 'test/fixtures/calculator.jison';
-		var text = fs.readFileSync(filepath);
-		var expected = rawJison.Parser(text.toString()).generate();
+    it('should output the same parser as jison', function (done) {
+        var filepath = 'test/fixtures/calculator.jison';
+        var text = fs.readFileSync(filepath);
+        var expected = rawJison.Parser(text.toString()).generate();
 
-		gulpJison()
-			.on('error', done)
-			.on('data', function(data) {
-				data.contents.toString().should.equal(expected);
-				done();
-			})
-			.write(createVirtualFile('calculator.jison', text));
-	});
+        gulpJison()
+            .on('error', done)
+            .on('data', function(data) {
+                data.contents.toString().should.equal(expected);
+                done();
+            })
+            .write(createVirtualFile('calculator.jison', text));
+    });
 
     it('should work with options', function (done) {
         var options = {type: 'slr', moduleType: 'amd', moduleName: 'jsoncheck'};
