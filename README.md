@@ -1,4 +1,4 @@
-gulp-jison
+gulp-jison [![NPM version](https://badge.fury.io/js/gulp-jison.png)](http://badge.fury.io/js/gulp-jison) [![Build Status](https://travis-ci.org/matteckert/gulp-jison.png?branch=master)](https://travis-ci.org/matteckert/gulp-jison) [![Dependency Status](https://david-dm.org/matteckert/gulp-jison.png)](https://david-dm.org/matteckert/gulp-jison)
 ==========
 
 Jison plugin for gulp
