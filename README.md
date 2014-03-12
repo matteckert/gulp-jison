@@ -6,13 +6,15 @@ Jison plugin for gulp
 Usage
 -----
 
-    var jison = require('gulp-jison');
+```javascript
+var jison = require('gulp-jison');
 
-    gulp.task('jison', function() {
-        return gulp.src('./src/*.jison')
-            .pipe(jison({ moduleType: 'commonjs' }))
-            .pipe(gulp.dest('./src/'));
-    });
+gulp.task('jison', function() {
+    return gulp.src('./src/*.jison')
+        .pipe(jison({ moduleType: 'commonjs' }))
+        .pipe(gulp.dest('./src/'));
+});
+```
 
 Errors
 ------
