@@ -1,6 +1,6 @@
 {
   "name": "gulp-jison",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Jison plugin for gulp",
   "main": "index.js",
   "scripts": {
