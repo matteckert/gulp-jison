@@ -25,6 +25,10 @@
 
 /* operator associations and precedence */
 
+%{
+var ast = require('./includetest.js')
+%}
+
 %left '+' '-'
 %left '*' '/'
 %left '^'

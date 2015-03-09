@@ -19,7 +19,7 @@ describe('gulp-jison', function() {
     it('should output the same parser as jison', function (done) {
         var filepath = 'test/fixtures/calculator.jison';
         var text = fs.readFileSync(filepath);
-        var expected = rawJison.Parser(text.toString()).generate();
+        var expected = rawJison.Generator(text.toString()).generate();
 
         gulpJison()
             .on('error', done)
@@ -35,7 +35,7 @@ describe('gulp-jison', function() {
 
         var filepath = 'test/fixtures/calculator.jison';
         var text = fs.readFileSync(filepath);
-        var expected = rawJison.Parser(text.toString(), options).generate();
+        var expected = rawJison.Generator(text.toString(), options).generate();
 
         gulpJison(options)
             .on('error', done)
