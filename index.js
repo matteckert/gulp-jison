@@ -2,7 +2,6 @@ var through = require('through2');
 var gutil = require('gulp-util');
 var PluginError = gutil.PluginError;
 var Generator = require('jison').Generator;
-var Parser = require('jison').Parser;
 
 const PLUGIN_NAME = 'gulp-jison';
 
