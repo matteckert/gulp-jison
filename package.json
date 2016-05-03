@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/matteckert/gulp-jison",
   "devDependencies": {
+    "ebnf-parser": "~0.1.10",
+    "lex-parser": "~0.1.4",
     "mocha": "~2.2.1",
     "should": "~5.1.0"
   },
   "dependencies": {
-    "jison": "~0.4.15",
+    "jison": "~0.4.17",
     "through2": "~0.6.3",
     "gulp-util": "~3.0.4"
   }
