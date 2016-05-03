@@ -21,7 +21,25 @@ module.exports = function (options) {
 
         if (file.isBuffer()) {
             try {
-                file.contents = new Buffer(new Generator(file.contents.toString(), options).generate());
+                var input = file.contents.toString();
+                var json = null;
+
+                try {
+                    // Will throw an error if the input is not JSON.
+                    json = JSON.parse(input);
+                } catch (err) {
+                    // JSON parsing failed, must be a Jison grammar.
+                    json = null;
+                } finally {
+                    if (json === null) {
+                        // Input is a Jison grammar.
+                        file.contents = new Buffer(new Generator(input, options).generate());
+                    } else {
+                        // Input is a JSON structure.
+                        file.contents = new Buffer(new Generator(json, options).generate());
+                    }
+                }
+
                 file.path = gutil.replaceExtension(file.path, ".js");
                 this.push(file);
             } catch (error) {
