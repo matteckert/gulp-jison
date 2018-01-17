@@ -22,11 +22,13 @@
   "homepage": "https://github.com/matteckert/gulp-jison",
   "devDependencies": {
     "mocha": "~2.2.1",
-    "should": "~5.1.0"
+    "should": "~5.1.0",
+    "vinyl": "~2.1.0"
   },
   "dependencies": {
     "jison": "~0.4.15",
-    "through2": "~0.6.3",
-    "gulp-util": "~3.0.4"
+    "plugin-error": "~1.0.0",
+    "replace-ext": "~1.0.0",
+    "through2": "~0.6.3"
   }
 }
