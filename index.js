@@ -1,6 +1,6 @@
 var through = require('through2');
-var gutil = require('gulp-util');
-var PluginError = gutil.PluginError;
+var replaceExtension = require('replace-ext');
+var PluginError = require('plugin-error');
 var Generator = require('jison').Generator;
 
 const PLUGIN_NAME = 'gulp-jison';
@@ -22,7 +22,7 @@ module.exports = function (options) {
         if (file.isBuffer()) {
             try {
                 file.contents = new Buffer(new Generator(file.contents.toString(), options).generate());
-                file.path = gutil.replaceExtension(file.path, ".js");
+                file.path = replaceExtension(file.path, ".js");
                 this.push(file);
             } catch (error) {
                 this.emit('error', new PluginError(PLUGIN_NAME, error));

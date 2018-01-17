@@ -1,13 +1,13 @@
 var should = require('should');
 var rawJison = require('jison');
 var gulpJison = require('../');
-var gutil = require('gulp-util');
+var Vinyl = require('vinyl');
 var fs = require('fs');
 var path = require('path');
 require('mocha');
 
 var createVirtualFile = function (filename, contents) {
-    return new gutil.File({
+    return new Vinyl({
         path: path.join(__dirname, 'fixtures', filename),
         base: path.join(__dirname, 'fixtures'),
         cwd: process.cwd(),
